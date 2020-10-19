@@ -1,13 +1,21 @@
 import React from 'react'
+import Character from './Character'
 
 
 function CharacterContainer({characters}){
 
 
-console.log(characters)
+    let charactersArray = characters.map(characterObj => {
+        return <Character 
+                    key={characterObj.id} 
+                    character={characterObj} 
+                />
+    })
+
+
     return(
-        <div className="cardContainer">
-                listcha
+        <div className="cardContainer ui grid">
+                {charactersArray}
         </div>
     )
 } 
