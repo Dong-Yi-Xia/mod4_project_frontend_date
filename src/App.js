@@ -19,21 +19,7 @@ import { Route, Switch, withRouter, Link, NavLink } from 'react-router-dom'
 
 class App extends React.Component {
 
-      state = {
-        characters : []
-    }
-
-    componentDidMount(){
-        const charactersURL = 'http://localhost:3000/characters'
-        fetch(charactersURL)
-        .then(r => r.json())
-        .then(resp => {
-            this.setState({
-                characters: resp
-            })
-        })
-    }
-
+ 
     
     render(){
 
@@ -43,12 +29,12 @@ class App extends React.Component {
              <NavBar />
 
           </header>
-
+     
           <main>
             <Switch>
               <Route path="/" exact component={Home} />
-              <Route path="/characters" exact> 
-                <CharactersPage characters={this.state.characters} />
+              <Route path="/characters" > 
+                <CharactersPage />
               </Route>
               <Route path="/appointments" >
                 <AppointmentsPage/>
@@ -56,11 +42,7 @@ class App extends React.Component {
               <Route path="/outfits" exact component={OutfitsPage} />
               <Route path="/profile" exact component={ProfilePage} />
               <Route path="/login" exact component={LoginPage} />
-
-
-              <Route path="/characters/2" exact>
-                <CharacterInfoPage/>
-              </Route>
+        
                
 
               <Route component={NotFound} />

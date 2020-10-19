@@ -78,6 +78,10 @@ ul.nav li a:hover {
   text-align: center;
 }
 
+.footer h6 {
+  margin: auto;
+}
+
 
 .characterMainContainer{
   margin: 10em;

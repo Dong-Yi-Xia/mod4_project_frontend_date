@@ -1,10 +1,10 @@
 import React from 'react'
-import { Route, Switch, NavLink, Redirect } from 'react-router-dom'
-import CharacterInfoPage from './CharacterInfoPage'
+import { NavLink } from 'react-router-dom'
 
 
 
 class Character extends React.Component{
+
 
 
     // clickheart = (evt) => {
@@ -12,24 +12,28 @@ class Character extends React.Component{
     // }
 
     // moreInfoCharacter = (routerProps) => {
-    //     console.log(routerProps)
-    //     // <CharacterPage character={this.props}/>
+    //   return <CharacterInfoPage character={this.props.character}/>
     // }
 
+
+    handleClearThePage = () => {      
+        this.props.handleNewDisplayFun([false, this.props.character])
+    }
  
+
+
     render(){
-        let {id, name, age, gender, occupation, lovePoint, favorite, bio, imageURL} = this.props.character
+        let {id, name, imageURL} = this.props.character
         
         return(
-            <div className="singleCard five wide column">
+            <div class="singleCard five wide column">
                 
 
                 <h3>{name}</h3>
                 <NavLink to={`/characters/${id}`}>  
-                    <img src={imageURL} />
+                    <img src={imageURL} onClick={this.handleClearThePage} />
                 </NavLink>
-               
-                
+            
                 <div class="ui heart rating" data-rating="1" data-max-rating="5" >
                     <i className="icon active"> </i>
                     <i className="icon"> </i>
@@ -37,14 +41,8 @@ class Character extends React.Component{
                     <i className="icon"> </i>
                     <i className="icon"> </i>
                 </div>
-
-
-                {/* <Switch>
-
-                    <Route path="/characters/2" Component={CharacterInfoPage}/>
-               </Switch>  */}
-                    
-            
+        
+                 
             </div>
         )
     }
