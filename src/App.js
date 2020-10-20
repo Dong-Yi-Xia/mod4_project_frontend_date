@@ -9,6 +9,7 @@ import AppointmentsPage from './AppointmentsComponent/AppointmentsPage'
 import OutfitsPage from './OutfitsComponent/OutfitsPage'
 import ProfilePage from './ProfileComponent/ProfilePage'
 import LoginPage from './AdminComponent/LoginPage'
+import RegisterForm from './AdminComponent/RegisterForm'
 import CharacterInfoPage from './CharactersComponent/CharacterInfoPage'
 
 import { Route, Switch, withRouter, Link, NavLink } from 'react-router-dom'
@@ -19,8 +20,13 @@ import { Route, Switch, withRouter, Link, NavLink } from 'react-router-dom'
 
 class App extends React.Component {
 
+  state = {
+    id: 0,
+    username: "",
+    token: ""
+  }
  
-    
+
     render(){
 
       return (
@@ -42,9 +48,9 @@ class App extends React.Component {
               <Route path="/outfits" exact component={OutfitsPage} />
               <Route path="/profile" exact component={ProfilePage} />
               <Route path="/login" exact component={LoginPage} />
+              <Route path='/register' exact component={RegisterForm} />
         
-               
-
+              
               <Route component={NotFound} />
             </Switch>
           </main>

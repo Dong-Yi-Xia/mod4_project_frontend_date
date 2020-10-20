@@ -1,4 +1,6 @@
 import React from 'react'
+import { NavLink, Route, Switch } from 'react-router-dom'
+import RegisterForm from './RegisterForm'
 
 class LoginForm extends React.Component{
 
@@ -7,13 +9,13 @@ class LoginForm extends React.Component{
         password: ""
       }
     
-      handleSubmit = (e) => {
-        e.preventDefault()
+      handleSubmit = (evt) => {
+        evt.preventDefault()
         // this.props.handleSubmit(this.state)
       }
     
-      handleChange = (e) => {
-        let {name, value} = e.target
+      handleChange = (evt) => {
+        let {name, value} = evt.target
         this.setState({
           [name]: value
         })
@@ -26,12 +28,19 @@ class LoginForm extends React.Component{
         return(
             <div className="formContainer">
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="username">Username:</label>
-                    <input type="text"  name="username" value={username} onChange={this.handleChange}/>
-                    <label htmlFor="password">Password:</label>
-                    <input type="password"  name="password" value={password} onChange={this.handleChange}/>
-                    <input type="submit" value="Submit"/>
+                     <h1>LogIn</h1>
+                    <input type="text" placeholder="username" name="username" 
+                      value={username} onChange={this.handleChange}
+                      />
+                    <input type="password" placeholder="password" name="password" 
+                      value={password} onChange={this.handleChange}
+                      />
+                    <button class="ui primary button" type="submit" > Submit </button>
+                    <NavLink  to="/register">
+                      <button class="ui button"> Register </button>
+                    </NavLink>
                 </form>
+
             </div>
         )
     }
