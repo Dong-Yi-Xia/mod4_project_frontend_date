@@ -3,9 +3,11 @@ import React from 'react'
 
 class ProfilePage extends React.Component {
     render(){
+        // console.log(this.props)
         return(
             <div>
-                Here is my profile
+                My profile page
+              
             </div>
         )
     }

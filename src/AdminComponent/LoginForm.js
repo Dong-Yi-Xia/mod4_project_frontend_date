@@ -11,7 +11,20 @@ class LoginForm extends React.Component{
     
       handleSubmit = (evt) => {
         evt.preventDefault()
-        // this.props.handleSubmit(this.state)
+        fetch("http://localhost:3000/users/login",{
+          method: "POST",
+          headers: {
+           "Content-Type": "Application/json"
+           },
+          body: JSON.stringify({
+            username: this.state.username,
+            password: this.state.password
+          })
+        })
+        .then(r => r.json())
+        .then(userResult => {
+          this.props.userInfoFun(userResult)
+        })
       }
     
       handleChange = (evt) => {

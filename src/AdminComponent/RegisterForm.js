@@ -40,8 +40,8 @@ class RegisterForm extends React.Component{
           })
           .then(res => res.json())
           .then(createdUser => {
-            console.log(createdUser)
-            this.props.history.push("/")
+            // console.log(createdUser)
+            this.props.history.push("/login")
           })
         
       }
@@ -54,7 +54,7 @@ class RegisterForm extends React.Component{
       }
 
     render(){
-        console.log(this.props)
+        
         let {username, password, name, age, gender, bio, looks, smarts, athletic, finance, kindness} = this.state
 
         return(

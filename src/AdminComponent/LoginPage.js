@@ -11,10 +11,10 @@ class LoginPage extends React.Component {
         return(
             <div>
                 
-                
+
                 <Switch> 
                     <Route path='/login' exact>
-                          <LoginForm />
+                          <LoginForm userInfoFun={this.props.userInfoFun}/>
                     </Route>
                 
                     <Route path='/register' exact>

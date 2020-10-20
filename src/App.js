@@ -10,9 +10,9 @@ import OutfitsPage from './OutfitsComponent/OutfitsPage'
 import ProfilePage from './ProfileComponent/ProfilePage'
 import LoginPage from './AdminComponent/LoginPage'
 import RegisterForm from './AdminComponent/RegisterForm'
-import CharacterInfoPage from './CharactersComponent/CharacterInfoPage'
 
-import { Route, Switch, withRouter, Link, NavLink } from 'react-router-dom'
+
+import { Route, Switch, withRouter } from 'react-router-dom'
 
 
 
@@ -21,11 +21,16 @@ import { Route, Switch, withRouter, Link, NavLink } from 'react-router-dom'
 class App extends React.Component {
 
   state = {
-    id: 0,
-    username: "",
-    token: ""
+    username: ""
   }
  
+  userInfoFun = (userInfo) => {
+    this.setState({
+      username: userInfo
+    })
+    this.props.history.push("/profile")
+  }
+  
 
     render(){
 
@@ -39,16 +44,26 @@ class App extends React.Component {
           <main>
             <Switch>
               <Route path="/" exact component={Home} />
+
               <Route path="/characters"> 
                 <CharactersPage />
               </Route>
+
               <Route path="/appointments" >
                 <AppointmentsPage/>
               </Route>
+
               <Route path="/outfits" exact component={OutfitsPage} />
-              <Route path="/profile" exact component={ProfilePage} />
-              <Route path="/login" exact component={LoginPage} />
-              <Route path='/register' exact component={RegisterForm} />
+
+              <Route path="/profile" exact >
+                <ProfilePage username={this.state.username} />
+              </Route>
+
+              <Route path="/login" exact >
+                <LoginPage userInfoFun={this.userInfoFun}/> 
+              </Route>
+
+              <Route path='/register' exact component={RegisterForm}/>
         
               
               <Route component={NotFound} />
@@ -65,4 +80,4 @@ class App extends React.Component {
 }
 
 
-export default App;
+export default  withRouter(App);
