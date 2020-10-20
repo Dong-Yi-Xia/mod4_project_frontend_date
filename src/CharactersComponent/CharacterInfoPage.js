@@ -1,4 +1,5 @@
 import React from 'react'
+import CharacterDateForm from './CharacterDateForm'
 import CharacterAppointment from './CharacterAppointment'
 
 class CharacterInfoPage extends React.Component{
@@ -36,6 +37,7 @@ class CharacterInfoPage extends React.Component{
         return(
             <div class="characterInfo">
 
+              <div class="eachCharacterInformation">
                 <img src={imageURL}/>
                 <p>Name: {name}</p>
                 <p>Age: {age}</p>
@@ -46,8 +48,12 @@ class CharacterInfoPage extends React.Component{
                              <button onClick={this.handleUpdate}> + </button> 
                 </p>
                 <p>{bio}</p>
+              </div>
+
+              
+               <CharacterDateForm />
                 
-                <CharacterAppointment appointments={this.props.character.appointments} />
+               <CharacterAppointment appointments={this.props.character.appointments} />
 
                 
                 

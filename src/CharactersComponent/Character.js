@@ -18,13 +18,14 @@ class Character extends React.Component{
 
 
     render(){
-        let {id, name, imageURL} = this.props.character
+        let {id, name, age, imageURL} = this.props.character
         
         return(
             <div class="singleCard five wide column">
                 
 
                 <h3>{name}</h3>
+    
                 <NavLink to={`/characters/${name}`}>  
                     <img src={imageURL}  />
                 </NavLink>
@@ -36,7 +37,8 @@ class Character extends React.Component{
                     <i className="icon"> </i>
                     <i className="icon"> </i>
                 </div>
-        
+            
+                <h5>Age: {age}</h5>
                  
             </div>
         )

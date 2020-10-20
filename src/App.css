@@ -92,10 +92,29 @@ ul.nav li a:hover {
   grid-template-columns: 6; */
   grid-row-gap: 4em;
   /* margin: auto; */
-  
 } 
 
+#mainImage {
+  height: 500px;
+  opacity: .8;
+}
 
+.filterBar{
+  width: 100%;
+}
 
+.home h1 {
+  font-size: 3em;
+  margin: 2%;
+}
 
+.home img {
+  border-radius: 5%;
+}
+
+.eachCharacterInformation {
+  width: 50%;
+  margin: auto;
+  padding-bottom: 10%;
+}
 

@@ -4,10 +4,12 @@ import CharacterInfoPage from './CharacterInfoPage'
 import { Route, Switch } from 'react-router-dom'
 
 
+
 class CharactersPage extends React.Component {
 
     state = {
-        characters : []
+        characters : [],
+        filter: "all"
     }
 
     componentDidMount(){
@@ -21,11 +23,15 @@ class CharactersPage extends React.Component {
         })
     }
 
-    // handleNewDisplayFun =(info) => {
-    //     this.setState({
-    //         character: info[1]
-    //     })
-    // }
+    handleSelection = (selectedValue) => {
+
+        this.setState(oldState => {
+            return{
+                filter: selectedValue
+            }
+        })
+    }
+
 
     updatedLPFun = (updatedLP) => {
         let newCharArr = this.state.characters.map(character =>{
@@ -52,15 +58,49 @@ class CharactersPage extends React.Component {
         } 
     }
 
+    filterArrayCharacters = () => {
+        let choice = this.state.filter
+        switch (choice){
+            case "all" :
+              return this.state.characters
+           
+            case "male" :
+              return this.state.characters.filter(character => character.gender === "male")
+
+            case "female" :
+                return this.state.characters.filter(character => character.gender === "female")
+
+            case "name" : 
+            let copyCharacterNameArray= [...this.state.characters]  
+            copyCharacterNameArray.sort( (nameA, nameB) => {
+                return nameA.name.localeCompare(nameB.name)
+            })
+            return copyCharacterNameArray  
+            
+            case "age" : 
+            let copyCharacterAgeArray= [...this.state.characters]  
+            copyCharacterAgeArray.sort( (ageA, ageB) => {
+                return ageA.age - ageB.age
+            })
+            return copyCharacterAgeArray    
+        }
+    }
+
 
     render(){
         
         return(
             <div className="characterMainContainer"> 
          
+               
+
                 <Switch> 
                     <Route path='/characters' exact>
-                        <CharacterContainer characters={this.state.characters} />
+                        <CharacterContainer 
+                         characters={this.filterArrayCharacters()}
+                         filter={this.state.filter}
+                         handleSelection={this.handleSelection}
+                         />
                     </Route>
                 
                     <Route path="/characters/:id" exact render={this.renderSpecificCharacter}/>
