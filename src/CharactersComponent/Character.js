@@ -16,11 +16,6 @@ class Character extends React.Component{
     // }
 
 
-    handleClearThePage = () => {      
-        this.props.handleNewDisplayFun([false, this.props.character])
-    }
- 
-
 
     render(){
         let {id, name, imageURL} = this.props.character
@@ -30,8 +25,8 @@ class Character extends React.Component{
                 
 
                 <h3>{name}</h3>
-                <NavLink to={`/characters/${id}`}>  
-                    <img src={imageURL} onClick={this.handleClearThePage} />
+                <NavLink to={`/characters/${name}`}>  
+                    <img src={imageURL}  />
                 </NavLink>
             
                 <div class="ui heart rating" data-rating="1" data-max-rating="5" >
