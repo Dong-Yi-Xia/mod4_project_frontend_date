@@ -118,3 +118,18 @@ ul.nav li a:hover {
   padding-bottom: 10%;
 }
 
+.formContainer{
+  display: flex;
+  height: 100vh;
+}
+
+.formContainer form{
+  margin: auto;
+  border: black solid 2px;
+  padding: 3em;
+}
+
+.formContainer input{
+  display: block;
+  margin: auto;
+}

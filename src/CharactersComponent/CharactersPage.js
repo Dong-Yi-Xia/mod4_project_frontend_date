@@ -24,7 +24,6 @@ class CharactersPage extends React.Component {
     }
 
     handleSelection = (selectedValue) => {
-
         this.setState(oldState => {
             return{
                 filter: selectedValue
