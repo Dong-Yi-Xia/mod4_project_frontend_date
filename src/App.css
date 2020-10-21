@@ -141,4 +141,10 @@ img{
   width: 100%;
 }
 
+.myprofile.ui.grid{
+  margin-top: 5%;
+}
 
+.ui.center.aligned.header{
+  width: 80px;
+}

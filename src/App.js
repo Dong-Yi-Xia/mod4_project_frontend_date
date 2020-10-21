@@ -21,7 +21,7 @@ import { Route, Switch, withRouter } from 'react-router-dom'
 class App extends React.Component {
 
   state = {
-    username: ""
+    user: ""
   }
  
   userInfoFun = (userInfo) => {
@@ -29,6 +29,16 @@ class App extends React.Component {
       username: userInfo
     })
     this.props.history.push("/profile")
+  }
+
+  componentDidMount(){
+    fetch("http://localhost:3000/users/1")
+    .then(r => r.json())
+    .then(resp => {
+      this.setState({
+          user: resp
+      })
+    })
   }
   
 
@@ -56,7 +66,7 @@ class App extends React.Component {
               <Route path="/outfits" exact component={OutfitsPage} />
 
               <Route path="/profile" exact >
-                <ProfilePage username={this.state.username} />
+                <ProfilePage user={this.state.user} />
               </Route>
 
               <Route path="/login" exact >
