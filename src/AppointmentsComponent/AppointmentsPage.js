@@ -1,11 +1,15 @@
 import React from 'react'
-
+import AppointmentContainer from './AppointmentContainer'
 
 class AppointmentsPage extends React.Component {
     render(){
+   
         return(
             <div>
-                Appointment list goes here
+                <AppointmentContainer 
+                appointments={this.props.appointments}
+                userID={this.props.userID}
+                />
             </div>
         )
     }

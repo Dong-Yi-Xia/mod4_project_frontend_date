@@ -68,7 +68,7 @@ ul.nav li a:hover {
 }
 
 .footer {
-  position: relative;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -163,4 +163,8 @@ img{
   display: block;
   margin: auto;
   margin-bottom: 5px;
+}
+
+.outfitpage{
+  margin-bottom: 10%;
 }

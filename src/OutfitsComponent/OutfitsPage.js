@@ -9,15 +9,15 @@ class OutfitsPage extends React.Component {
 
         
         return(
-            <div>
+            <div class="outfitpage">
                 <OutfitForm 
                 user={this.props.user} 
                 newOutfitFun={this.props.newOutfitFun}
                 />
 
                 <OutfitContainer 
-                // user={this.props.user}
                 outfits={this.props.outfits} 
+                deletedOutfitFun={this.props.deletedOutfitFun}
                 />
             </div>
         )

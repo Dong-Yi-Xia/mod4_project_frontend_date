@@ -22,12 +22,9 @@ import { Route, Switch, withRouter } from 'react-router-dom'
 class App extends React.Component {
 
   state = {
-    // user: {
-    //   outfits: {},
-    //   appointments: {}
-    // },
     user: [],
-    outfits: []
+    outfits: [],
+    appointments: []
   }
  
   userInfoFun = (userInfo) => {
@@ -43,23 +40,30 @@ class App extends React.Component {
     .then(resp => {
       this.setState({
           user: resp,
-          outfits: resp.outfits
+          outfits: resp.outfits,
+          appointments: resp.appointments
       })
     })
   }
 
   newOutfitFun =(newOutfit) => {
-    console.log(newOutfit)
     this.setState(oldstate => {
       return{
         outfits: [...this.state.outfits, newOutfit]
       }
     })
-    // this.props.history.push("/characters")
-   
     console.log(this)
   }
   
+  deletedOutfitFun = (deletedOutfit) => {
+    let newOutfitArray = this.state.outfits.filter(outfit => {
+      return outfit.id !== deletedOutfit.id
+    })
+
+    this.setState({
+      outfits: newOutfitArray
+    })
+  }
 
     render(){
 
@@ -79,7 +83,10 @@ class App extends React.Component {
               </Route>
 
               <Route path="/appointments" >
-                <AppointmentsPage/>
+                <AppointmentsPage 
+                appointments={this.state.appointments} 
+                userID={this.state.user.id}
+                />
               </Route>
 
               <Route path="/outfits" exact >
@@ -87,6 +94,7 @@ class App extends React.Component {
                   user={this.state.user} 
                   outfits={this.state.outfits}
                   newOutfitFun={this.newOutfitFun}
+                  deletedOutfitFun={this.deletedOutfitFun}
                   />  
               </Route>
 

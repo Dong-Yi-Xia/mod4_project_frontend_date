@@ -2,6 +2,18 @@ import React from 'react'
 
 class Outfit extends React.Component{
 
+
+    handleDelete = (evt) => {
+        fetch(`http://localhost:3000/outfits/${this.props.outfit.id}`, {
+          method: 'DELETE',
+        })
+        .then (r => r.json())
+        .then(deletedOutfit => {
+          this.props.deletedOutfitFun(this.props.outfit)
+        })
+      }
+
+      
     render(){
         
         let {outfitname, headwear, topwear, bottomwear, shoe, accessories} = this.props.outfit
@@ -13,7 +25,7 @@ class Outfit extends React.Component{
                 <td> {bottomwear}</td>
                 <td> {shoe}</td>
                 <td> {accessories}</td>
-                <td> <button className="ui button"> X </button> </td>
+                <td> <button className="ui button" onClick={this.handleDelete}> X </button> </td>
           </tr>
         )
     }

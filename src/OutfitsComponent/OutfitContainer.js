@@ -10,7 +10,7 @@ class OutfitContainer extends React.Component{
             return <Outfit 
                     key={outfitObj.id}
                     outfit={outfitObj}
-                    // user={this.props.user}
+                    deletedOutfitFun={this.props.deletedOutfitFun}
                     />
         })
 
