@@ -18,10 +18,16 @@ import { Route, Switch, withRouter } from 'react-router-dom'
 
 
 
+
 class App extends React.Component {
 
   state = {
-    user: ""
+    // user: {
+    //   outfits: {},
+    //   appointments: {}
+    // },
+    user: [],
+    outfits: []
   }
  
   userInfoFun = (userInfo) => {
@@ -36,9 +42,22 @@ class App extends React.Component {
     .then(r => r.json())
     .then(resp => {
       this.setState({
-          user: resp
+          user: resp,
+          outfits: resp.outfits
       })
     })
+  }
+
+  newOutfitFun =(newOutfit) => {
+    console.log(newOutfit)
+    this.setState(oldstate => {
+      return{
+        outfits: [...this.state.outfits, newOutfit]
+      }
+    })
+    // this.props.history.push("/characters")
+   
+    console.log(this)
   }
   
 
@@ -63,7 +82,13 @@ class App extends React.Component {
                 <AppointmentsPage/>
               </Route>
 
-              <Route path="/outfits" exact component={OutfitsPage} />
+              <Route path="/outfits" exact >
+                  <OutfitsPage 
+                  user={this.state.user} 
+                  outfits={this.state.outfits}
+                  newOutfitFun={this.newOutfitFun}
+                  />  
+              </Route>
 
               <Route path="/profile" exact >
                 <ProfilePage user={this.state.user} />

@@ -48,7 +48,7 @@ ul.nav {
   overflow: hidden;
   display: flex;
   justify-content: space-evenly;
-  background-color: #333;
+  background-color: rgb(250, 112, 49);
 }
 
 ul.nav li {
@@ -68,7 +68,7 @@ ul.nav li a:hover {
 }
 
 .footer {
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -147,4 +147,20 @@ img{
 
 .ui.center.aligned.header{
   width: 80px;
+}
+
+.outfitcontainer{
+  width: 80%;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.outfitForm {
+  margin-top: 5%;
+}
+
+.outfitForm input{
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
 }
