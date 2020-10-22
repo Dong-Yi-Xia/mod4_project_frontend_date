@@ -88,6 +88,8 @@ class CharactersPage extends React.Component {
                 return ageA.age - ageB.age
             })
             return copyCharacterAgeArray    
+
+            default:
         }
     }
 

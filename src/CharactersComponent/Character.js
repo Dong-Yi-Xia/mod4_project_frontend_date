@@ -18,7 +18,7 @@ class Character extends React.Component{
 
 
     render(){
-        let {id, name, age, imageURL} = this.props.character
+        let { name, age, imageURL} = this.props.character
         
         return(
             <div class="singleCard five wide column">
@@ -27,7 +27,7 @@ class Character extends React.Component{
                 <h3>{name}</h3>
     
                 <NavLink to={`/characters/${name}`}>  
-                    <img src={imageURL}  />
+                    <img src={imageURL}  alt={name}/>
                 </NavLink>
             
                 <div class="ui heart rating" data-rating="1" data-max-rating="5" >

@@ -15,7 +15,7 @@ class ProfilePage extends React.Component {
             <div class="myprofile ui grid">
                 <div class="profileLeft six wide column">
                     <h1>My profile page</h1>
-                    <img src='https://res.cloudinary.com/dfqzcsl8x/image/upload/v1603237135/Project4/blank_leicjd.png'></img>
+                    <img src='https://res.cloudinary.com/dfqzcsl8x/image/upload/v1603237135/Project4/blank_leicjd.png' alt="myimage"></img>
                     <h2>{name}</h2>
                     <p>Age: {age}</p>
                     <p>Gender: {gender}</p>

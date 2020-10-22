@@ -1,6 +1,6 @@
 import React from 'react'
-import { NavLink, Route, Switch } from 'react-router-dom'
-import RegisterForm from './RegisterForm'
+import { NavLink } from 'react-router-dom'
+
 
 class LoginForm extends React.Component{
 

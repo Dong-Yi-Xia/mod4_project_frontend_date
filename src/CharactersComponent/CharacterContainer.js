@@ -1,7 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
 import Character from './Character'
-import CharacterInfoPage from './CharacterInfoPage'
 import Filter from './Filter'
 
 

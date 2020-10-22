@@ -38,7 +38,7 @@ class CharacterInfoPage extends React.Component{
             <div class="characterInfo">
 
               <div class="eachCharacterInformation">
-                <img src={imageURL}/>
+                <img src={imageURL} alt={name}/>
                 <p>Name: {name}</p>
                 <p>Age: {age}</p>
                 <p>Gender: {gender}</p>
