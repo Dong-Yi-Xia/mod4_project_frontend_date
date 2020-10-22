@@ -16,7 +16,8 @@ class AppointmentContainer extends React.Component {
         })
         return(
             <div className="appointmentcontainer"> 
-                <table className="ui celled striped padded table">
+            <h1> My Appointments </h1>
+                <table className="ui celled striped padded table">  
                     <tbody>
                         <tr>
                             <th>

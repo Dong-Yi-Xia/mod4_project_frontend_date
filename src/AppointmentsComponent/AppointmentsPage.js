@@ -5,7 +5,7 @@ class AppointmentsPage extends React.Component {
     render(){
    
         return(
-            <div>
+            <div class="appointmentspage">
                 <AppointmentContainer 
                 appointments={this.props.appointments}
                 userID={this.props.userID}

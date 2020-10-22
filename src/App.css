@@ -41,7 +41,15 @@
   box-sizing: border-box;
 }
 
+body{
+  height: 100%;
+}
+
 ul.nav {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -61,6 +69,8 @@ ul.nav li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-weight: bold;
+  /* font-family: 'DM Serif Text', serif; */
 }
 
 ul.nav li a:hover {
@@ -88,10 +98,7 @@ ul.nav li a:hover {
 } 
 
 .cardContainer {
-  /* display: grid;
-  grid-template-columns: 6; */
   grid-row-gap: 4em;
-  /* margin: auto; */
 } 
 
 #mainImage {
@@ -103,9 +110,19 @@ ul.nav li a:hover {
   width: 100%;
 }
 
+.home {
+  margin-top: 5%;
+}
+
 .home h1 {
   font-size: 3em;
   margin: 2%;
+  font-family: 'DM Serif Text', serif;
+  color: sandybrown;;
+}
+
+h1,h2,h3,h4,h5,h5,p {
+  font-family: 'DM Serif Text', serif;
 }
 
 .home img {
@@ -170,6 +187,7 @@ img{
   margin-bottom: 5px;
 }
 
-.outfitpage{
+.outfitpage, .appointmentspage{
   margin-bottom: 10%;
 }
+

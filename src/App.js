@@ -25,8 +25,12 @@ class App extends React.Component {
     user: [],
     outfits: [],
     appointments: []
+    // token: "",
+    // id: 0
   }
  
+
+
   userInfoFun = (userInfo) => {
     this.setState({
       username: userInfo
@@ -34,8 +38,9 @@ class App extends React.Component {
     this.props.history.push("/profile")
   }
 
+
   componentDidMount(){
-    fetch("http://localhost:3000/users/2")
+    fetch("http://localhost:3000/users/1")
     .then(r => r.json())
     .then(resp => {
       this.setState({
@@ -45,6 +50,7 @@ class App extends React.Component {
       })
     })
   }
+
 
   newOutfitFun =(newOutfit) => {
     this.setState(oldstate => {
@@ -65,6 +71,7 @@ class App extends React.Component {
     })
   }
 
+
   newAppointmentFun =(newAppointment) => {
     this.setState(oldstate => {
       return{
@@ -74,6 +81,7 @@ class App extends React.Component {
 
     this.props.history.push("/appointments")
   }
+
 
   deletedAppointmentFun = (deletedAppointment) => {
     let newAppointmentArray = this.state.appointments.filter(appointment => {

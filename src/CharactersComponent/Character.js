@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import $ from 'jquery'
 
 
 
@@ -7,15 +8,14 @@ class Character extends React.Component{
 
 
 
-    // clickheart = (evt) => {
-    //     evt.target.classList.toggle("active")
+    clickheart = (evt) => {
+        evt.target.classList.toggle("active")
+    }
+    
+    // componentDidMount(){
+    //     $('.ui.rating').rating()
     // }
-
-    // moreInfoCharacter = (routerProps) => {
-    //   return <CharacterInfoPage character={this.props.character}/>
-    // }
-
-
+   
 
     render(){
         let { name, age, imageURL} = this.props.character
