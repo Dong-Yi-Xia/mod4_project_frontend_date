@@ -33,7 +33,16 @@ class OutfitForm extends React.Component{
         })
           .then(res => res.json())
           .then(newOutfit => {
-            this.props.newOutfitFun(newOutfit)        
+              this.props.newOutfitFun(newOutfit)
+              this.setState({
+                outfitname: "", 
+                headwear: "", 
+                topwear: "", 
+                bottomwear: "", 
+                shoe: "", 
+                accessories: "",
+                user_id: ""
+              })   
           })  
       }
 

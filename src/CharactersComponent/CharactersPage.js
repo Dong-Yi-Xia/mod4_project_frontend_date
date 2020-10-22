@@ -47,13 +47,19 @@ class CharactersPage extends React.Component {
     }
 
     renderSpecificCharacter = (routerProps) => {
-        console.log(routerProps)
+        // console.log(routerProps)
         let whatUserTyped = routerProps.match.params.id
         let foundCharacter = this.state.characters.find( (characterObj) => {
             return characterObj.name === whatUserTyped
         })
         if(foundCharacter){
-            return <CharacterInfoPage character={foundCharacter} updatedLPFun={this.updatedLPFun}/>  
+            return <CharacterInfoPage 
+            character={foundCharacter} 
+            updatedLPFun={this.updatedLPFun}
+            outfits={this.props.outfits}
+            userID={this.props.userID}
+            newAppointmentFun={this.props.newAppointmentFun}
+            />  
         } 
     }
 

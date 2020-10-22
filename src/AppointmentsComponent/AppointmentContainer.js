@@ -9,13 +9,32 @@ class AppointmentContainer extends React.Component {
         })
         let componentArray = filteredArrayAppointments.map(appointmentObj => {
             return <Appointment 
-                    key={appointmentObj}
+                    key={appointmentObj.id}
                     appointment={appointmentObj}
+                    deletedAppointmentFun={this.props.deletedAppointmentFun}
                     />
         })
         return(
-            <div>
-                {componentArray}
+            <div className="appointmentcontainer"> 
+                <table className="ui celled striped padded table">
+                    <tbody>
+                        <tr>
+                            <th>
+                            <h3 className="ui center aligned header">Date</h3>
+                            </th>
+                            <th>
+                            <h3 className="ui center aligned header">Location</h3>
+                            </th>
+                            <th>
+                            <h3 className="ui center aligned header">Character</h3>
+                            </th>
+                            <th>
+                            <h3 className="ui center aligned header">Outfit Set</h3>
+                            </th>
+                        </tr>
+                            {componentArray}
+                    </tbody>
+                 </table>
             </div>
         )
     }

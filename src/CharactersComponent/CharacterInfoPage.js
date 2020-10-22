@@ -51,7 +51,12 @@ class CharacterInfoPage extends React.Component{
               </div>
 
               
-               <CharacterDateForm />
+               <CharacterDateForm 
+               outfits={this.props.outfits} 
+               userID={this.props.userID} 
+               characterID={this.props.character.id}
+               newAppointmentFun={this.props.newAppointmentFun}
+               />
                 
                <CharacterAppointment appointments={this.props.character.appointments} />
 

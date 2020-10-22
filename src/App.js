@@ -35,7 +35,7 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    fetch("http://localhost:3000/users/1")
+    fetch("http://localhost:3000/users/2")
     .then(r => r.json())
     .then(resp => {
       this.setState({
@@ -52,9 +52,9 @@ class App extends React.Component {
         outfits: [...this.state.outfits, newOutfit]
       }
     })
-    console.log(this)
   }
   
+
   deletedOutfitFun = (deletedOutfit) => {
     let newOutfitArray = this.state.outfits.filter(outfit => {
       return outfit.id !== deletedOutfit.id
@@ -64,6 +64,28 @@ class App extends React.Component {
       outfits: newOutfitArray
     })
   }
+
+  newAppointmentFun =(newAppointment) => {
+    this.setState(oldstate => {
+      return{
+        appointments: [...oldstate.appointments, newAppointment]
+      }
+    })
+
+    this.props.history.push("/appointments")
+  }
+
+  deletedAppointmentFun = (deletedAppointment) => {
+    let newAppointmentArray = this.state.appointments.filter(appointment => {
+      return appointment.id !== deletedAppointment.id
+    })
+
+    this.setState({
+      appointments: newAppointmentArray
+    })
+  }
+
+
 
     render(){
 
@@ -79,13 +101,18 @@ class App extends React.Component {
               <Route path="/" exact component={Home} />
 
               <Route path="/characters"> 
-                <CharactersPage />
+                <CharactersPage 
+                userID={this.state.user.id}
+                outfits={this.state.outfits}
+                newAppointmentFun={this.newAppointmentFun}
+                />
               </Route>
 
               <Route path="/appointments" >
                 <AppointmentsPage 
                 appointments={this.state.appointments} 
                 userID={this.state.user.id}
+                deletedAppointmentFun={this.deletedAppointmentFun}
                 />
               </Route>
 

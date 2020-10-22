@@ -9,6 +9,7 @@ class AppointmentsPage extends React.Component {
                 <AppointmentContainer 
                 appointments={this.props.appointments}
                 userID={this.props.userID}
+                deletedAppointmentFun={this.props.deletedAppointmentFun}
                 />
             </div>
         )

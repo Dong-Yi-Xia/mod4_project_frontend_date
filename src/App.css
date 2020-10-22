@@ -78,7 +78,7 @@ ul.nav li a:hover {
   text-align: center;
 }
 
-.footer h6 {
+.footer p {
   margin: auto;
 }
 
@@ -149,7 +149,7 @@ img{
   width: 80px;
 }
 
-.outfitcontainer{
+.outfitcontainer, .appointmentcontainer{
   width: 80%;
   margin: auto;
   margin-top: 5%;
