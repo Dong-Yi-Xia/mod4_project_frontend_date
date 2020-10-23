@@ -1,17 +1,46 @@
 
+## Mod 4 Project - Anime Dating App
+
+User is able to create account and login. 
+The user can create and delete an outfit for the date. 
+The user is able to choose from a selection of characters and be able to filter the selection of choice. 
+The user is able to click on a character to see more information and request a date. They are able to see all the users that have requested a date with that character. 
+Able to see all the requested date appointment and able to delete the appointment.
+Able to raise LovePoints, how much affection the user have. 
+Able to give the character a favorite heart rating.  
+
+
+## How it was SetUp
+Created using a react frontend and a rails backend
+
+Frontend Setup
+npm install --global npm
+npm install -g create-react-app 
+create-react-app <my-project-client> 
+npm install react-router-dom
+npm install semantic-ui-react semantic-ui-css
+
+
+Backend Setup
+brew install postgres
+brew install ruby
+gem install rails
+rails new <my-project> --api -T --database=postgresql
+gem 'bcrypt', '~> 3.1.7'
+gem 'active_model_serializers'
+gem 'jwt'
+
+
 ## FrameWork
 ![alt text](https://res.cloudinary.com/dfqzcsl8x/image/upload/v1603460003/Project4/00_aoygxz.png)
-
-
-
-
-
-
-
-
-
-
-
+![alt text](https://res.cloudinary.com/dfqzcsl8x/image/upload/v1603460028/Project4/01_n595ve.png)
+![alt text](https://res.cloudinary.com/dfqzcsl8x/image/upload/v1603460037/Project4/02_fpuwqw.png)
+![alt text](https://res.cloudinary.com/dfqzcsl8x/image/upload/v1603460042/Project4/03_spy8ia.png)
+![alt text](https://res.cloudinary.com/dfqzcsl8x/image/upload/v1603460017/Project4/04_uvgsxy.png)
+![alt text](https://res.cloudinary.com/dfqzcsl8x/image/upload/v1603460032/Project4/06_if4t8t.png)
+![alt text](https://res.cloudinary.com/dfqzcsl8x/image/upload/v1603460025/Project4/07_s13pww.png)
+![alt text](https://res.cloudinary.com/dfqzcsl8x/image/upload/v1603460040/Project4/08_kkrzh3.png)
+![alt text](https://res.cloudinary.com/dfqzcsl8x/image/upload/v1603460041/Project4/09_htwlg5.png)
 
 
 
