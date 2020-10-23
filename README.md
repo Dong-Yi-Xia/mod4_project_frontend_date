@@ -1,34 +1,34 @@
 
 ## Mod 4 Project - Anime Dating App
 
-User is able to create account and login. 
-The user can create and delete an outfit for the date. 
-The user is able to choose from a selection of characters and be able to filter the selection of choice. 
-The user is able to click on a character to see more information and request a date. They are able to see all the users that have requested a date with that character. 
-Able to see all the requested date appointment and able to delete the appointment.
-Able to raise LovePoints, how much affection the user have. 
-Able to give the character a favorite heart rating.  
+User is able to create account and login. <br />
+The user can create and delete an outfit for the date. <br />
+The user is able to choose from a selection of characters and be able to filter the selection of choice. <br />
+The user is able to click on a character to see more information and request a date. They are able to see all the users that have requested a date with that character. <br />
+Able to see all the requested date appointment and able to delete the appointment.<br />
+Able to raise LovePoints, how much affection the user have. <br />
+Able to give the character a favorite heart rating.  <br />
 
 
 ## How it was SetUp
-Created using a react frontend and a rails backend
+Created using a react frontend and a rails backend<br /><br />
 
-Frontend Setup
-npm install --global npm
-npm install -g create-react-app 
-create-react-app <my-project-client> 
-npm install react-router-dom
-npm install semantic-ui-react semantic-ui-css
+Frontend Setup<br />
+npm install --global npm<br />
+npm install -g create-react-app <br />
+create-react-app <my-project-client> <br />
+npm install react-router-dom<br />
+npm install semantic-ui-react semantic-ui-css<br /><br />
 
 
-Backend Setup
-brew install postgres
-brew install ruby
-gem install rails
-rails new <my-project> --api -T --database=postgresql
-gem 'bcrypt', '~> 3.1.7'
-gem 'active_model_serializers'
-gem 'jwt'
+Backend Setup<br />
+brew install postgres<br />
+brew install ruby<br />
+gem install rails<br />
+rails new <my-project> --api -T --database=postgresql<br />
+gem 'bcrypt', '~> 3.1.7'<br />
+gem 'active_model_serializers'<br />
+gem 'jwt'<br />
 
 
 ## FrameWork
