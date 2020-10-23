@@ -216,6 +216,10 @@ img{
   animation: HOHO infinite 1s alternate ease-in-out;
 }
 
+.singleCard.five.wide.column:hover{
+  animation: CARDDANCE infinite 1s alternate ease-in-out;
+}
+
 @keyframes HOHO {
   from {
     transform: scale(1);
@@ -224,3 +228,15 @@ img{
     transform: scale(3);
   }
 }
+
+@keyframes CARDDANCE{
+  from {
+    transform: rotateZ(-5deg) scale(.9);
+    transition: transform .4s ease;
+  }
+  to{
+    transform: rotateZ(5deg) scale(1.1);
+    transition: transform .4s ease;
+  }
+}
+
