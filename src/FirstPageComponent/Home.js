@@ -7,7 +7,7 @@ export default () => {
       
       <img id="mainImage" alt="mainImage" src="https://res.cloudinary.com/dfqzcsl8x/image/upload/v1603206513/Project4/smugMP_ufziu6.gif" />
 
-      <h2> Ho Ho... Who is it that you desire? </h2>
+      <h2 className="hoho"> Ho Ho... Who is it that you desire? </h2>
     </div>
   )
 }

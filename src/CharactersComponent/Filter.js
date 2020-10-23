@@ -11,7 +11,7 @@ class Filter extends React.Component {
 
         return(
             <div>
-                <label> Interested In ... </label>
+                <label className="filterTitle"> Interested In ... </label>
                 <select value={this.props.filter} onChange={this.handleChange}>
                     <option value={"all"}> All </option>
                     <option value={"male"}> Male </option>
