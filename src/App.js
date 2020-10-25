@@ -57,8 +57,8 @@ class App extends React.Component {
     } else {
       localStorage.token = resp.token
       this.setState({
-        // id: resp.user.id,
-        // token: resp.token,
+        id: resp.user.id,
+        token: resp.token,
         user: resp.user,
         outfits: resp.user.outfits,
         appointments: resp.user.appointments
@@ -124,7 +124,7 @@ class App extends React.Component {
 
 
     render(){
-        console.log(localStorage)
+// console.log(this.state)
       return (
         <div className="App">
           <header>
