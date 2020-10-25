@@ -1,7 +1,15 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom'
+import {NavLink, Link} from 'react-router-dom'
 
-const NavBar = () => {
+const NavBar = (props) => {
+
+
+  let handleClick =() => {
+    props.handleLogOut()
+  }
+
+  // console.log(localStorage)
+  
   return(
     <ul className="nav">
       <li>
@@ -19,10 +27,14 @@ const NavBar = () => {
       <li>
         <NavLink to="/profile">My Profile</NavLink>
       </li>
-      {/* Need condition statement either login or logout */}
+  
       <li>
-        <NavLink to="/login">Login</NavLink>
+      {localStorage.token ? <Link onClick={handleClick}> LogOut </Link> : <NavLink to="/login"> LogIn </NavLink> }
       </li>
+
+      {/* <li>
+        <NavLink to="/login">Login</NavLink>
+      </li> */}
     </ul>
   )
 };

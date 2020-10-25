@@ -43,7 +43,11 @@ class CharacterDateForm extends React.Component{
         })
         .then(r => r.json())
         .then(newAppointment => {
+            if(newAppointment.error){
+                alert(newAppointment.error)
+              } else {
             this.props.newAppointmentFun(newAppointment)
+            }
         })
     }
     

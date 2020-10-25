@@ -24,31 +24,59 @@ class App extends React.Component {
   state = {
     user: [],
     outfits: [],
-    appointments: []
-    // token: "",
-    // id: 0
+    appointments: [],
+    token: "",
+    id: 0
   }
  
 
-
   userInfoFun = (userInfo) => {
-    this.setState({
-      username: userInfo
-    })
-    this.props.history.push("/profile")
+    // console.log(userInfo)
+    this.helpHandleResponse(userInfo)
+  }
+
+  componentDidMount(){
+    if(localStorage.token){
+      fetch("http://localhost:3000/users/keep_logged_in", {
+        method: "GET",
+        headers: {
+          "Authorization": localStorage.token
+        }
+      })
+        .then(res => res.json())
+        .then(this.helpHandleResponse)
+        
+    }
   }
 
 
-  componentDidMount(){
-    fetch("http://localhost:3000/users/1")
-    .then(r => r.json())
-    .then(resp => {
+  helpHandleResponse = (resp) => {
+    if(resp.error){
+      alert(resp.error)
+      // console.error(resp.error)
+    } else {
+      localStorage.token = resp.token
       this.setState({
-          user: resp,
-          outfits: resp.outfits,
-          appointments: resp.appointments
+        id: resp.user.id,
+        token: resp.token,
+        user: resp.user,
+        outfits: resp.user.outfits,
+        appointments: resp.user.appointments
+        
       })
+      this.props.history.push("/profile")
+    }
+  }
+
+  handleLogOut = () => {
+    this.setState({
+      user: [],
+      outfits: [],
+      appointments: [],
+      token: "",
+      id: 0
     })
+    localStorage.clear()
   }
 
 
@@ -100,7 +128,7 @@ class App extends React.Component {
       return (
         <div className="App">
           <header>
-             <NavBar />
+             <NavBar handleLogOut={this.handleLogOut}/>
 
           </header>
      

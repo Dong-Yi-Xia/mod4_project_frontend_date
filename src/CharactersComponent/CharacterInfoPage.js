@@ -25,7 +25,11 @@ class CharacterInfoPage extends React.Component{
         })
         .then (r => r.json())
         .then(updatedLP => {
+          if(updatedLP.error){
+            alert(updatedLP.error)
+          } else {
           this.props.updatedLPFun(updatedLP)
+          }
         })
       }
 

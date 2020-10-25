@@ -1,4 +1,5 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 
 class OutfitForm extends React.Component{
     state ={
@@ -33,6 +34,9 @@ class OutfitForm extends React.Component{
         })
           .then(res => res.json())
           .then(newOutfit => {
+            if(newOutfit.error){
+                alert(newOutfit.error)
+              } else {
               this.props.newOutfitFun(newOutfit)
               this.setState({
                 outfitname: "", 
@@ -42,7 +46,8 @@ class OutfitForm extends React.Component{
                 shoe: "", 
                 accessories: "",
                 user_id: ""
-              })   
+              })
+            }   
           })  
       }
 
