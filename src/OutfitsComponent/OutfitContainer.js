@@ -11,6 +11,7 @@ class OutfitContainer extends React.Component{
                     key={outfitObj.id}
                     outfit={outfitObj}
                     deletedOutfitFun={this.props.deletedOutfitFun}
+                    token={this.props.token}
                     />
         })
 

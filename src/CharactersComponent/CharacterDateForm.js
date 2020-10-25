@@ -31,7 +31,8 @@ class CharacterDateForm extends React.Component{
         fetch("http://localhost:3000/appointments", {
             method: 'POST',
             headers: {
-                "Content-Type": "Application/json"
+                "Content-Type": "Application/json",
+                "authorization": this.props.token
             },
             body: JSON.stringify({
               date: date,

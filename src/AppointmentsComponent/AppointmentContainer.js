@@ -12,6 +12,7 @@ class AppointmentContainer extends React.Component {
                     key={appointmentObj.id}
                     appointment={appointmentObj}
                     deletedAppointmentFun={this.props.deletedAppointmentFun}
+                    token={this.props.token}
                     />
         })
         return(

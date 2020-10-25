@@ -6,6 +6,10 @@ class Appointment extends React.Component{
     handleDelete = (evt) => {
         fetch(`http://localhost:3000/appointments/${this.props.appointment.id}`, {
           method: 'DELETE',
+          headers: {
+            "Content-Type": "Application/json",
+            "authorization": this.props.token
+        },
         })
         .then (r => r.json())
         .then(deletedAppointment => {

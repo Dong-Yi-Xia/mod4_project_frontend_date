@@ -10,6 +10,7 @@ class AppointmentsPage extends React.Component {
                 appointments={this.props.appointments}
                 userID={this.props.userID}
                 deletedAppointmentFun={this.props.deletedAppointmentFun}
+                token={this.props.token}
                 />
             </div>
         )

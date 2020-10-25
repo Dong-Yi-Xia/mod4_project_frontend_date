@@ -13,11 +13,13 @@ class OutfitsPage extends React.Component {
                 <OutfitForm 
                 user={this.props.user} 
                 newOutfitFun={this.props.newOutfitFun}
+                token={this.props.token}
                 />
 
                 <OutfitContainer 
                 outfits={this.props.outfits} 
                 deletedOutfitFun={this.props.deletedOutfitFun}
+                token={this.props.token}
                 />
             </div>
         )

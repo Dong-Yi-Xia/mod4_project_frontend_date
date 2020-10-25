@@ -60,6 +60,7 @@ class CharactersPage extends React.Component {
             outfits={this.props.outfits}
             userID={this.props.userID}
             newAppointmentFun={this.props.newAppointmentFun}
+            token={this.props.token}
             />  
         } 
     }

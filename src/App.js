@@ -141,6 +141,7 @@ class App extends React.Component {
                 userID={this.state.user.id}
                 outfits={this.state.outfits}
                 newAppointmentFun={this.newAppointmentFun}
+                token={this.state.token}
                 />
               </Route>
 
@@ -149,6 +150,7 @@ class App extends React.Component {
                 appointments={this.state.appointments} 
                 userID={this.state.user.id}
                 deletedAppointmentFun={this.deletedAppointmentFun}
+                token={this.props.token}
                 />
               </Route>
 
@@ -158,6 +160,7 @@ class App extends React.Component {
                   outfits={this.state.outfits}
                   newOutfitFun={this.newOutfitFun}
                   deletedOutfitFun={this.deletedOutfitFun}
+                  token={this.state.token}
                   />  
               </Route>
 

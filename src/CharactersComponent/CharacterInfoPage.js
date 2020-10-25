@@ -17,7 +17,8 @@ class CharacterInfoPage extends React.Component{
         fetch(`http://localhost:3000/characters/${this.props.character.id}`, {
           method: 'PATCH',
           headers: {
-            'content-type' : 'application/json'
+            'content-type' : 'application/json',
+            "authorization": this.props.token
           },
           body: JSON.stringify({
             lovePoint: this.props.character.lovePoint + value
@@ -60,6 +61,7 @@ class CharacterInfoPage extends React.Component{
                userID={this.props.userID} 
                characterID={this.props.character.id}
                newAppointmentFun={this.props.newAppointmentFun}
+               token={this.props.token}
                />
                 
                <CharacterAppointment appointments={this.props.character.appointments} />
