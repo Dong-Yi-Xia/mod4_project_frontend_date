@@ -17,7 +17,7 @@ class OutfitForm extends React.Component{
         let {outfitname, headwear, topwear, bottomwear, shoe, accessories} = this.state
         let {id} = this.props.user
 
-        fetch("http://localhost:3000/outfits", {
+        fetch("/outfits", {
             method: "POST",
             headers: {
                 "Content-Type": "Application/json",

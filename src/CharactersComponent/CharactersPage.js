@@ -14,7 +14,7 @@ class CharactersPage extends React.Component {
     }
 
     componentDidMount(){
-        const charactersURL = 'http://localhost:3000/characters'
+        const charactersURL = '/characters'
         fetch(charactersURL)
         .then(r => r.json())
         .then(resp => {

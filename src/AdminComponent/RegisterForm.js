@@ -19,7 +19,7 @@ class RegisterForm extends React.Component{
       handleSubmit = (evt) => {
         evt.preventDefault()
         let {username, password, name, age, gender, bio, looks, smarts, athletic, finance, kindness} = this.state
-        fetch("http://localhost:3000/users", {
+        fetch("/users", {
             method: "POST",
             headers: {
               "Content-Type": "Application/json"

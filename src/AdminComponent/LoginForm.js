@@ -11,7 +11,7 @@ class LoginForm extends React.Component{
     
       handleSubmit = (evt) => {
         evt.preventDefault()
-        fetch("http://localhost:3000/users/login",{
+        fetch("/users/login",{
           method: "POST",
           headers: {
            "Content-Type": "Application/json"

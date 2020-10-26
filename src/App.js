@@ -37,7 +37,7 @@ class App extends React.Component {
 
   componentDidMount(){
     if(localStorage.token){
-      fetch("http://localhost:3000/users/keep_logged_in", {
+      fetch("/users/keep_logged_in", {
         method: "GET",
         headers: {
           "Authorization": localStorage.token
@@ -77,6 +77,7 @@ class App extends React.Component {
       id: 0
     })
     localStorage.clear()
+    this.props.history.push("/login")
   }
 
 

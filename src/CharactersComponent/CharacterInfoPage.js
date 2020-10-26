@@ -14,7 +14,7 @@ class CharacterInfoPage extends React.Component{
             value = 1
         }
       
-        fetch(`http://localhost:3000/characters/${this.props.character.id}`, {
+        fetch(`/characters/${this.props.character.id}`, {
           method: 'PATCH',
           headers: {
             'content-type' : 'application/json',

@@ -28,7 +28,7 @@ class CharacterDateForm extends React.Component{
         evt.preventDefault()
         let{ date, location, outfit} = this.state
 
-        fetch("http://localhost:3000/appointments", {
+        fetch("/appointments", {
             method: 'POST',
             headers: {
                 "Content-Type": "Application/json",
