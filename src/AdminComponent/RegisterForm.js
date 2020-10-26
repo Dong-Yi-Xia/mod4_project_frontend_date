@@ -19,7 +19,7 @@ class RegisterForm extends React.Component{
       handleSubmit = (evt) => {
         evt.preventDefault()
         let {username, password, name, age, gender, bio, looks, smarts, athletic, finance, kindness} = this.state
-        fetch("/users", {
+        fetch("https://mod4dating-api.herokuapp.com/users", {
             method: "POST",
             headers: {
               "Content-Type": "Application/json"

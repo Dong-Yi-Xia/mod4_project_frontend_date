@@ -4,7 +4,7 @@ class Outfit extends React.Component{
 
 
     handleDelete = (evt) => {
-        fetch(`/outfits/${this.props.outfit.id}`, {
+        fetch(`https://mod4dating-api.herokuapp.com/outfits/${this.props.outfit.id}`, {
           method: 'DELETE',
           headers: {
             "Content-Type": "Application/json",

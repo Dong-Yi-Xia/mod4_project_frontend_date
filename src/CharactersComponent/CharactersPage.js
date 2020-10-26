@@ -14,8 +14,8 @@ class CharactersPage extends React.Component {
     }
 
     componentDidMount(){
-        const charactersURL = '/characters'
-        fetch(charactersURL)
+        // const charactersURL = '/characters'
+        fetch('https://mod4dating-api.herokuapp.com/characters')
         .then(r => r.json())
         .then(resp => {
             this.setState({

@@ -14,7 +14,7 @@ class CharacterInfoPage extends React.Component{
             value = 1
         }
       
-        fetch(`/characters/${this.props.character.id}`, {
+        fetch(`https://mod4dating-api.herokuapp.com/characters/${this.props.character.id}`, {
           method: 'PATCH',
           headers: {
             'content-type' : 'application/json',

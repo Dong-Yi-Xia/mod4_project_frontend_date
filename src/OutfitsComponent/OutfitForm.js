@@ -17,7 +17,7 @@ class OutfitForm extends React.Component{
         let {outfitname, headwear, topwear, bottomwear, shoe, accessories} = this.state
         let {id} = this.props.user
 
-        fetch("/outfits", {
+        fetch("https://mod4dating-api.herokuapp.com/outfits", {
             method: "POST",
             headers: {
                 "Content-Type": "Application/json",

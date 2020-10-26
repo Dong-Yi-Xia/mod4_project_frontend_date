@@ -28,7 +28,7 @@ class CharacterDateForm extends React.Component{
         evt.preventDefault()
         let{ date, location, outfit} = this.state
 
-        fetch("/appointments", {
+        fetch("https://mod4dating-api.herokuapp.com/appointments", {
             method: 'POST',
             headers: {
                 "Content-Type": "Application/json",

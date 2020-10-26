@@ -11,7 +11,7 @@ class LoginForm extends React.Component{
     
       handleSubmit = (evt) => {
         evt.preventDefault()
-        fetch("/users/login",{
+        fetch("https://mod4dating-api.herokuapp.com/users/login",{
           method: "POST",
           headers: {
            "Content-Type": "Application/json"
